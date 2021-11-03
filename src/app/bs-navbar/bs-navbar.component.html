@@ -3,7 +3,7 @@
   aria-label="Fourth navbar example"
 >
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Expand at md</a>
+    <a class="navbar-brand" href="#">OShop</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -27,32 +27,36 @@
         <li ngbDropdown class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
-            href="#"
             id="dropdown04"
             data-bs-toggle="dropdown"
             aria-expanded="false"
             ngbDropdownToggle
-            >Dropdown</a
+            >Username</a
           >
           <ul
             ngbDropdownMenu
             class="dropdown-menu"
             aria-labelledby="dropdown04"
           >
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li>
+              <a class="dropdown-item" routerLink="/my-orders">My Orders</a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/admin/orders"
+                >Manage Orders</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/admin/products"
+                >Manage Products</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item">Log Out</a>
+            </li>
           </ul>
         </li>
       </ul>
-      <form>
-        <input
-          class="form-control"
-          type="text"
-          placeholder="Search"
-          aria-label="Search"
-        />
-      </form>
     </div>
   </div>
 </nav>
