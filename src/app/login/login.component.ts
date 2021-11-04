@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component } from '@angular/core';
+import { Auth, signInWithRedirect } from '@angular/fire/auth';
+import { GoogleAuthProvider } from '@firebase/auth';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-  constructor() { }
+  constructor(private auth: Auth) { }
 
-  ngOnInit(): void {
+  login() {
+    signInWithRedirect(this.auth, new GoogleAuthProvider())
   }
-
 }
