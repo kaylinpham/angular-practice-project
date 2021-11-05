@@ -27,7 +27,7 @@
           </li>
         </ng-template>
         <li
-          *ngIf="user$ | async as user; else anonymousUser"
+          *ngIf="auth.user$ | async as user; else anonymousUser"
           ngbDropdown
           class="nav-item dropdown"
         >

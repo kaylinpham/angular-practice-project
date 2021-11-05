@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { Auth, authState, signOut } from '@angular/fire/auth';
-import { User } from "firebase/auth"
-import { Observable } from 'rxjs';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'bs-navbar',
@@ -9,12 +7,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['./bs-navbar.component.css']
 })
 export class BsNavbarComponent {
-  user$: Observable<User | null>;
-
-  constructor(private auth: Auth) {
-    this.user$ = authState(auth)
-    //using Observable to unsubscribe automatically
+  constructor(public auth: AuthService) {
   }
 
-  logout() { signOut(this.auth) }
+  logout() { this.auth.logout() }
 }
